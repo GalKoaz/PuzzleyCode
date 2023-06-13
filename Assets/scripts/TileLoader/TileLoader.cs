@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,16 @@ public class TileLoader : MonoBehaviour
     [SerializeField] private string sceneName;
     private Collider player;
     private bool canChangeScene = false;
+    private GameObject _uiCanvas;
+    private CanvasManger CanvasManger;
+    private GameObject gameUICanvas;
+
+    private void Start()
+    {
+        _uiCanvas = GameObject.Find("_GAME_UI");
+        CanvasManger = _uiCanvas.GetComponent<CanvasManger>();
+        gameUICanvas = CanvasManger.GameUI;
+    }
 
     // This function is called when another collider enters this object's collider
     void OnTriggerEnter(Collider other)
@@ -37,11 +48,13 @@ public class TileLoader : MonoBehaviour
         {
             LoadNextScene();
             player.gameObject.SetActive(false);
+            gameUICanvas.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Escape) && canChangeScene)
         {
             UnloadCurrentScene();
             player.gameObject.SetActive(true);
+            gameUICanvas.SetActive(true);
         }
     }
 

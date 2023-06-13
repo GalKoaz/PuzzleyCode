@@ -11,6 +11,7 @@ public class CanvasManger : MonoBehaviour
     [SerializeField] private GameObject noteInteractionPanel;
     [SerializeField] private GameObject playerGameObj;
     [SerializeField] private GameObject inventoryPanel;
+    [SerializeField] private GameObject gameUI;
     
     /*******  Raycast SECTION ********/
     // Current raycast hit object
@@ -82,4 +83,12 @@ public class CanvasManger : MonoBehaviour
         get { return inventoryPanel; }
         set { inventoryPanel = value; }
     }
+    
+    /*******  GameUI SECTION ********/
+    public GameObject GameUI
+    {
+        get { return gameUI; }
+        set { gameUI = value; }
+    }
+    
 }
