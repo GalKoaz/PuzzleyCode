@@ -3218,6 +3218,7 @@ MonoBehaviour:
   blockade: {fileID: 2028998099}
   steps: 1
   shift: 1
+  dooropen: 0
   code_true: 0
   code: 38
   doorA: {fileID: 1276079561}
