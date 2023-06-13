@@ -15,3 +15,10 @@ Dynamic Elements of our game: [Dynamic-Elements](https://github.com/GalKoaz/Puzz
 Youtube: [Trailer](https://youtu.be/SI6RSqvYu-M)
 
 Itch: [PlayNow](https://galkoaz.itch.io/puzzleycode)
+
+<img src="https://i.ibb.co/vJtKHxV/1.png" alt="1" border="0">
+<img src="https://i.ibb.co/jM9RD8J/2.png" alt="2" border="0">
+<img src="https://i.ibb.co/CJ46bTq/3.png" alt="3" border="0">
+<img src="https://i.ibb.co/0t10tgf/4.png" alt="4" border="0">
+<img src="https://i.ibb.co/TPHqyGZ/5.png" alt="5" border="0">
+<img src="https://i.ibb.co/j61GVSD/6.png" alt="6" border="0">
