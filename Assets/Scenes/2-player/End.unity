@@ -6454,6 +6454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 16
   NextScenes: End
+  usbInventoryItem: {fileID: 11400000, guid: bc522edbd15b60e4580b7941cbf68429, type: 2}
 --- !u!1 &1342709531
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class ObjectiveManager : MonoBehaviour
     public List<ObjectiveData> roomObjectives;
 
     // Current active objective
-    private ObjectiveData currentObjective;
+    public ObjectiveData currentObjective;
 
     public event Action OnObjectiveEndEvent; // event that is invoked whenever we finish current objective
     

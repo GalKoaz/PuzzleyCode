@@ -6,6 +6,9 @@ public class EndScene : MonoBehaviour
 {
     [SerializeField] public float delay = 10f;
     [SerializeField] public string NextScenes;
+    [SerializeField] private InventoryItemData usbInventoryItem;
+    [SerializeField] private GameObject noteSpawner;
+    
     private GameObject _uiCanvas;
     private CanvasManger canvasManager;
     private GameObject playerObj;
@@ -29,5 +32,6 @@ public class EndScene : MonoBehaviour
         SceneManager.UnloadSceneAsync(NextScenes);
         playerObj.gameObject.SetActive(true);
         gameUICanvas.SetActive(true);
+        InventorySystem.Instance.Remove(usbInventoryItem);
     }
 }
