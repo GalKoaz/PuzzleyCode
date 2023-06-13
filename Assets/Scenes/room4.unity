@@ -2728,7 +2728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843847249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.39312, y: 30.976973, z: -59.167976}
+  m_LocalPosition: {x: -6.39312, y: 33.38, z: -59.167976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2749,14 +2749,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   place: {fileID: 952080638}
-  length: 4
+  length: 6
   prefab_bulb: {fileID: 6927634419470880171, guid: 5937246573e08ed4fb90f2c88455db6e, type: 3}
   blockade: {fileID: 2028998099}
   steps: 1
   shift: 1
   dooropen: 0
   code_true: 0
-  code: 10
+  code: 33
   doorA: {fileID: 1276079561}
   doorB: {fileID: 946445255}
   nextroom: room5
@@ -3993,7 +3993,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952080637}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.09312, y: 30.976973, z: -59.8}
+  m_LocalPosition: {x: -12.44, y: 33.380005, z: -59.8}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7910,6 +7910,66 @@ Transform:
   m_Father: {fileID: 1842150506}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1829725983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829725984}
+  - component: {fileID: 1829725985}
+  - component: {fileID: 1829725986}
+  m_Layer: 0
+  m_Name: ReadGalLetters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1829725984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829725983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2129712306}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1829725985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829725983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e7e2a775bb27e4b9d947f20ed6e936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveData: {fileID: 11400000, guid: 4fc11431b2073b84caecc5d308044688, type: 2}
+--- !u!114 &1829725986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829725983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8ca3b04973089489fc45579f8bb65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteCollideGameObject: {fileID: 512586524}
+  readButton: 101
 --- !u!1 &1842150505
 GameObject:
   m_ObjectHideFlags: 0
@@ -9197,7 +9257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36742dffb4cad0546bf809623beebe13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objective: {fileID: 1097337176}
+  objective: {fileID: 1829725983}
 --- !u!4 &2129712306
 Transform:
   m_ObjectHideFlags: 0
@@ -9214,6 +9274,7 @@ Transform:
   - {fileID: 1947605918}
   - {fileID: 736664948}
   - {fileID: 966103561}
+  - {fileID: 1829725984}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9224,6 +9285,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1876584951}
     m_Modifications:
+    - target: {fileID: 1871030143, guid: ff032be6a68493d47b59e666f4d7c679, type: 3}
+      propertyPath: noteBodyText
+      value: "If you are reading this letter, \nyou deserve respect.\n\nIn order
+        to go through the next door leading to the next room,\n\nthe code for the
+        door is:  1 0 0 0 0 1\n\nGood Luck!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871030143, guid: ff032be6a68493d47b59e666f4d7c679, type: 3}
+      propertyPath: noteTimeText
+      value: 21:10
+      objectReference: {fileID: 0}
     - target: {fileID: 1871030145, guid: ff032be6a68493d47b59e666f4d7c679, type: 3}
       propertyPath: m_Enabled
       value: 1

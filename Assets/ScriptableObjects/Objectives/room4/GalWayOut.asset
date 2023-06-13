@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7677526137f9aa46a941a51ac8345c8, type: 3}
   m_Name: GalWayOut
   m_EditorClassIdentifier: 
-  objectiveID: 3
+  objectiveID: 4
   nextObjectiveID: -1
   objectiveName: GalWayOut
   objectiveDescription: Find the way out

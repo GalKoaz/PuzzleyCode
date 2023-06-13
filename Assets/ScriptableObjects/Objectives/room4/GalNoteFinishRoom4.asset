@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7677526137f9aa46a941a51ac8345c8, type: 3}
   m_Name: GalNoteFinishRoom4
   m_EditorClassIdentifier: 
-  objectiveID: 2
-  nextObjectiveID: 3
+  objectiveID: 3
+  nextObjectiveID: 4
   objectiveName: GalNoteFinishRoom4
   objectiveDescription: Read Gal's note on the table
   isCompleted: 0

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7677526137f9aa46a941a51ac8345c8, type: 3}
-  m_Name: PlugUSB
+  m_Name: ReadGalLetters
   m_EditorClassIdentifier: 
-  objectiveID: 2
-  nextObjectiveID: 3
-  objectiveName: PlugUSB
-  objectiveDescription: Plug the USB into the PC
+  objectiveID: 0
+  nextObjectiveID: 1
+  objectiveName: 
+  objectiveDescription: Read Gal's letters
   isCompleted: 0
   isTriggered: 0
