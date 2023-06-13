@@ -21,8 +21,14 @@ EditorBuildSettings:
     path: Assets/Scenes/room4.unity
     guid: 88a9621d6bedfd24bb39fc1febeeeecd
   - enabled: 1
+    path: Assets/Scenes/2-player/Start.unity
+    guid: 11390767fdf1014429a2e4aa68332efb
+  - enabled: 1
     path: Assets/Scenes/2-player/tilemap.unity
     guid: b0672e358e1598d42bc6b13d11552e17
+  - enabled: 1
+    path: Assets/Scenes/2-player/End.unity
+    guid: 4ca4369a7b9132742b561082985ed3ec
   - enabled: 1
     path: Assets/Scenes/room5.unity
     guid: fe4788a469978ab4b88190df9ef2bb0f

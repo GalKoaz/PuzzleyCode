@@ -10,6 +10,7 @@ TagManager:
   - bulb2
   - button2
   - drawer
+  - CanvPanel
   layers:
   - Default
   - TransparentFX

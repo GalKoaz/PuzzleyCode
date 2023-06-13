@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.Linq;
+using TMPro;
 
 public class ShipCollisionHandler : Keycut
 {
@@ -19,6 +20,7 @@ public class ShipCollisionHandler : Keycut
     [SerializeField] AllowedTiles allowedTiles;
     [SerializeField] TileBase[] AllowedCut;
     [SerializeField] float slow = 1f;
+    [SerializeField] private TextMeshProUGUI ship;
 
     // Variable to track the current time
     private float currTime = 0f;
@@ -78,6 +80,7 @@ public class ShipCollisionHandler : Keycut
         // Check if the user pressed the 'G' key
         if (Input.GetKeyDown(KeyCode.G))
         {
+            ship.color = Color.green;
             // Get the tile at the new position
             TileBase tileOnDirPosition = TileOnPosition(transform.position + saveStep);
 

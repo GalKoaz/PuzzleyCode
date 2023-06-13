@@ -53,6 +53,6 @@ public class TileLoader : MonoBehaviour
     
     void UnloadCurrentScene()
     {
-        SceneManager.UnloadSceneAsync(scene);
+        SceneManager.UnloadSceneAsync(sceneName);
     }
 }

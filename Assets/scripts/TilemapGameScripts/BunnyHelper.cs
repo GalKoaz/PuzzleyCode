@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class BunnyHelper : MonoBehaviour {
     [SerializeField] AllowedTiles allowedTiles;
     [SerializeField] TileBase bunnyHelperTile;
+    [SerializeField] private TextMeshProUGUI bunnytext;
 
     private SpriteRenderer spriteRenderer;
     private bool previousSpriteStatus;
@@ -17,6 +19,7 @@ public class BunnyHelper : MonoBehaviour {
     private void Update() {
         if (spriteRenderer.enabled != previousSpriteStatus) {
             previousSpriteStatus = spriteRenderer.enabled;
+            bunnytext.color = Color.green;
             UpdateAllowedTiles();
         }
     }

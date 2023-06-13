@@ -7,6 +7,8 @@ public class StartScene : MonoBehaviour
 {
     // SerializeField to set the delay before transitioning to the next scene
     [SerializeField] public float delay = 10f;
+    [SerializeField] public string NextScene;
+    [SerializeField] public string unload;
 
     private void Start()
     {
@@ -27,6 +29,9 @@ public class StartScene : MonoBehaviour
         yield return new WaitForSeconds(.6f);
 
         // Load the next scene in the build order
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync(NextScene, LoadSceneMode.Additive);
+        
+        Fader.instance.FadeIn();
+        SceneManager.UnloadSceneAsync(unload);
     }
 }

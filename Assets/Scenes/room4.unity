@@ -6592,7 +6592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c727816fc7ca442a0667650a9ca9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: tilemap
+  scene: Start
   sceneName: tilemap
 --- !u!65 &1653204966
 BoxCollider:
