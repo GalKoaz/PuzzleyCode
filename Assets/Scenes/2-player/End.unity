@@ -2530,10 +2530,6 @@ MonoBehaviour:
   NextScene: 
   unload: 
   letter: {fileID: 0}
-<<<<<<< Updated upstream
-  sceneLoaded: 0
-=======
->>>>>>> Stashed changes
 --- !u!60 &648238007
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2612,11 +2608,7 @@ SpriteRenderer:
   m_Size: {x: 0.625, y: 0.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-<<<<<<< Updated upstream
-  m_WasSpriteAssigned: 0
-=======
   m_WasSpriteAssigned: 1
->>>>>>> Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &715825157
@@ -6440,11 +6432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 16
-<<<<<<< Updated upstream
-=======
   NextScene: room4
   unload: 
->>>>>>> Stashed changes
 --- !u!4 &1257987072
 Transform:
   m_ObjectHideFlags: 0
@@ -6474,12 +6463,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 16
   NextScenes: End
-<<<<<<< Updated upstream
-  _uiCanvas: {fileID: 0}
-  canvasManager: {fileID: 0}
-  playerObj: {fileID: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &1342709531
 GameObject:
   m_ObjectHideFlags: 0
@@ -6725,10 +6708,7 @@ MonoBehaviour:
   AllowedCut:
   - {fileID: 11400000, guid: 883f415e61b36bf4ba52de535f4ebe2a, type: 2}
   slow: 1
-<<<<<<< Updated upstream
-=======
   ship: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!60 &1372915637
 PolygonCollider2D:
   m_ObjectHideFlags: 0
