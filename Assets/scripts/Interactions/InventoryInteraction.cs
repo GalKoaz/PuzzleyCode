@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class InventoryInteraction : MonoBehaviour
 {
-    [Tooltip("Open the inventory button")] [SerializeField]
-    private KeyCode interactInputAction;
+    [SerializeField] private KeyCode interactInputAction;
 
     private GameObject _uiCanvas;
     private CanvasManger canvasManager;

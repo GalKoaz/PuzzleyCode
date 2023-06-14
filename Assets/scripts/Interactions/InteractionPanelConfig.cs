@@ -6,16 +6,13 @@ using UnityEngine.UI;
 
 public class InteractionPanelConfig : MonoBehaviour
 {
-    [Header("component's interaction title (optional title)")] [SerializeField]
-    private string title;
+    [SerializeField] private string title;
 
-    [Header("First action configuration (optional control)")] [SerializeField]
-    private Sprite firstActionButton;
+    [SerializeField] private Sprite firstActionButton;
 
     [SerializeField] private string firstActionTitle;
 
-    [Header("Second action configuration (optional control)")] [SerializeField]
-    private Sprite secActionButton;
+    [SerializeField] private Sprite secActionButton;
 
     [SerializeField] private string secActionTitle;
 
