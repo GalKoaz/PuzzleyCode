@@ -19,7 +19,9 @@ public class LightsOutPuzzle : MonoBehaviour
     private float openOffset = .5f;
 
     private bool[,] _drawersStatus;
-
+    
+    public bool Solved { get; set; } = false;  // Indicates if player solved or not.
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +61,9 @@ public class LightsOutPuzzle : MonoBehaviour
         // Check if player solved the puzzle after current operation
         if (IsSolved())
         {
-            Debug.Log("Player has solved the puzzle");
+            Solved = true;
+
+            ObjectiveManager.Instance.currentObjective.isTriggered = true;  // Move to next objectibe
         }
     }
 

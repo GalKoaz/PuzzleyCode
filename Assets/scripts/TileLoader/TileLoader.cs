@@ -10,6 +10,7 @@ public class TileLoader : MonoBehaviour
     [SerializeField] private string sceneName;
     [SerializeField] private InventoryItemData usbInventoryItem;
     [SerializeField] private GameObject plugUsbObjectiveObj;
+    [SerializeField] private Outline pcOutlineScript;
     
     private Collider player;
     private bool canChangeScene = false;
@@ -62,6 +63,7 @@ public class TileLoader : MonoBehaviour
         {
             if (!isSceneLoaded && canChangeScene && Input.GetKeyDown(KeyCode.E))
             {
+                pcOutlineScript.enabled = false;
                 isSceneLoaded = true;
                 LoadNextScene();
                 player.gameObject.SetActive(false);

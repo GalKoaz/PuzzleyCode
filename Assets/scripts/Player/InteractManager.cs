@@ -80,12 +80,16 @@ public class InteractManager : MonoBehaviour
             InteractionPanelConfig interactionPanelConfig = RaycastObject.GetComponent<InteractionPanelConfig>();
             if (interactionPanelConfig)
             {
-                //Debug.Log("IS CLICKABLE!");
-                CrosshairChange(true);
-                interactionPanelConfig.Active(true);
-                interactionPanelConfig.SetVisualInfo();
-                canvasManager.IsRaycastInteract = true;
-                canvasManager.CurrRaycastObj = RaycastObject;
+                // Player decided not to have it at that moment
+                if (!interactionPanelConfig.Disable)
+                {
+                    //Debug.Log("IS CLICKABLE!");
+                    CrosshairChange(true);
+                    interactionPanelConfig.Active(true);
+                    interactionPanelConfig.SetVisualInfo();
+                    canvasManager.IsRaycastInteract = true;
+                    canvasManager.CurrRaycastObj = RaycastObject;
+                }
             }
             else
             {
@@ -101,7 +105,7 @@ public class InteractManager : MonoBehaviour
         
     }
     
-    void CrosshairChange(bool useTexture)
+    public void CrosshairChange(bool useTexture)
     {
         if (useTexture && CrosshairUI.sprite != interactCrosshair)
         {

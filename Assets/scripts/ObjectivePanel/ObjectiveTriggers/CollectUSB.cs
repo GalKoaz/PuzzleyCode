@@ -7,7 +7,8 @@ using UnityEngine;
 public class CollectUSB : MonoBehaviour
 {
     [SerializeField] private GameObject usbGameObj;
-
+    [SerializeField] private Outline pcGameObjectOutline;
+    
     private ObjectiveData objectiveData;
     private InventoryItemData usbInventoryItemData;
     private bool _triggered = false;
@@ -37,7 +38,8 @@ public class CollectUSB : MonoBehaviour
             if (IsTrigger())
             {
                 objectiveData.isTriggered = true;
-            }   
+                pcGameObjectOutline.enabled = true;
+            }
         }
     }
 

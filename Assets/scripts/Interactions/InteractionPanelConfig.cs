@@ -23,6 +23,8 @@ public class InteractionPanelConfig : MonoBehaviour
     private GameObject _interactionInfo;
     private GameObject _control1;
     private GameObject _control2;
+
+    public bool Disable { get; set; } = false;
     
     // Start is called before the first frame update
     void Start()

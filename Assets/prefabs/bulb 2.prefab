@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6927634419470880169}
   - component: {fileID: 6927634419470880168}
   - component: {fileID: 7543602764747254414}
+  - component: {fileID: 664860436812946000}
   m_Layer: 0
   m_Name: bulb 2
   m_TagString: bulb2
@@ -115,3 +116,20 @@ MonoBehaviour:
   b_m: {fileID: 0}
   off_m: {fileID: 2100000, guid: 5226262bfffcb9e4ba54d3ea0cdcc940, type: 2}
   on_m: {fileID: 2100000, guid: 572b4d0002a94a04a8e0b496833f3003, type: 2}
+--- !u!114 &664860436812946000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6927634419470880171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8828ba193deb949b0b4cc2ee97670f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: 
+  firstActionButton: {fileID: 21300000, guid: 22d3438d9c840ef47adca2e82e90f5c2, type: 3}
+  firstActionTitle: Use
+  secActionButton: {fileID: 0}
+  secActionTitle: 
