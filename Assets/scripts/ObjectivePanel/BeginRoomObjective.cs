@@ -10,7 +10,7 @@ using UnityEngine;
 public class BeginRoomObjective : MonoBehaviour
 {
     [SerializeField] private GameObject objective;
-    
+
     // Start is called before the first frame update
     void Start()
     {

@@ -21,8 +21,8 @@ public class ObjectiveElementUI : MonoBehaviour
         {
             checkX.SetActive(true);
             checkV.SetActive(false);
-
         }
+
         objectiveDescriptionText.text = objective.objectiveDescription;
     }
 }

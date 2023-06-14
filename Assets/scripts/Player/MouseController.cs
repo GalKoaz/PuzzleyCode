@@ -9,7 +9,7 @@ public class MouseController : MonoBehaviour
     [SerializeField] private Vector3 deltaMove;
     [SerializeField] private float speed = 1;
     [SerializeField] private GameObject mover;
-    
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class InventoryEventSystem : MonoBehaviour
 {
-    [Tooltip("Slot prefab to instantiate a new item in inventory")]
-    [SerializeField] private GameObject inventorySlotPrefab;
-    
+    [Tooltip("Slot prefab to instantiate a new item in inventory")] [SerializeField]
+    private GameObject inventorySlotPrefab;
+
     private void Start()
     {
         InventorySystem.Instance.OnInventoryChangedEvent += OnUpdateInventory;
@@ -19,6 +19,7 @@ public class InventoryEventSystem : MonoBehaviour
         {
             Destroy(t.gameObject);
         }
+
         DrawInventory();
     }
 

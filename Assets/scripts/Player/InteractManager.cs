@@ -8,29 +8,27 @@ public class InteractManager : MonoBehaviour
 {
     [SerializeField] private GameObject playerCameraGameObject;
     private Camera _playerCamera;
-    
-    [Header("Raycast")]
-    public float RaycastRange = 3;
+
+    [Header("Raycast")] public float RaycastRange = 3;
     public LayerMask cullLayers;
     public LayerMask interactLayers;
 
-    [Header("Crosshair Textures")]
-    public Sprite defaultCrosshair;
+    [Header("Crosshair Textures")] public Sprite defaultCrosshair;
     public Sprite interactCrosshair;
     private Sprite default_interactCrosshair;
 
-    [Header("Crosshair")]
-    public Image CrosshairUI;
+    [Header("Crosshair")] public Image CrosshairUI;
     public int crosshairSize = 5;
     public int interactSize = 10;
-    
-    
+
+
     #region Private Variables
+
     [HideInInspector] public bool isHeld = false;
     [HideInInspector] public bool inUse;
     [HideInInspector] public Ray playerAim;
     [HideInInspector] public GameObject RaycastObject;
-    
+
     private GameObject _uiCanvas;
     private CanvasManger canvasManager;
     private GameObject LastRaycastObject;
@@ -44,12 +42,13 @@ public class InteractManager : MonoBehaviour
 
     private bool isPressed;
     private bool isCorrectLayer;
+
     #endregion
 
     private void Awake()
     {
         _playerCamera = playerCameraGameObject.GetComponent<Camera>();
-        
+
         // Set canvas manager
         _uiCanvas = GameObject.Find("_GAME_UI");
         canvasManager = _uiCanvas.GetComponent<CanvasManger>();
@@ -59,7 +58,7 @@ public class InteractManager : MonoBehaviour
     void Start()
     {
         _playerCamera = playerCameraGameObject.GetComponent<Camera>();
-        
+
         // Set canvas manager
         _uiCanvas = GameObject.Find("_GAME_UI");
         canvasManager = _uiCanvas.GetComponent<CanvasManger>();
@@ -75,7 +74,7 @@ public class InteractManager : MonoBehaviour
         if (Physics.Raycast(playerAimRay.origin, playerAimRay.direction * RaycastRange, out var hit))
         {
             RaycastObject = hit.collider.gameObject;
-            
+
             // Object is clickable - change cursor accordingly
             InteractionPanelConfig interactionPanelConfig = RaycastObject.GetComponent<InteractionPanelConfig>();
             if (interactionPanelConfig)
@@ -98,13 +97,9 @@ public class InteractManager : MonoBehaviour
                 canvasManager.SetActive(false);
                 canvasManager.IsRaycastInteract = false;
             }
-
         }
-
-        
-        
     }
-    
+
     public void CrosshairChange(bool useTexture)
     {
         if (useTexture && CrosshairUI.sprite != interactCrosshair)
@@ -120,7 +115,7 @@ public class InteractManager : MonoBehaviour
 
         CrosshairUI.DisableSpriteOptimizations();
     }
-    
+
     private void ResetCrosshair()
     {
         crosshairSize = default_crosshairSize;

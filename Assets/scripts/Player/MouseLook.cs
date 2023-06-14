@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+
 // using ThunderWire.Helpers;
 // using ThunderWire.Utility;
 // using ThunderWire.Input;
@@ -14,35 +15,36 @@ namespace Player
         [SerializeField] private GameObject mainCameraGameObject;
         [SerializeField] private GameObject player;
 
-        private Camera mainCamera; 
-        
-        public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
+        private Camera mainCamera;
+
+        public enum RotationAxes
+        {
+            MouseXAndY = 0,
+            MouseX = 1,
+            MouseY = 2
+        }
+
         public RotationAxes axes = RotationAxes.MouseXAndY;
 
         public bool isLocalCamera;
         public bool smoothLook;
         public float smoothTime = 5f;
 
-        [Header("Sensitivity")]
-        public float sensitivityX = 15F;
+        [Header("Sensitivity")] public float sensitivityX = 15F;
         public float sensitivityY = 15F;
 
-        [Header("Look Limits")]
-        public float minimumX = -60F;
+        [Header("Look Limits")] public float minimumX = -60F;
         public float maximumX = 60F;
         public float minimumY = -60F;
         public float maximumY = 60F;
 
-        [Header("Look Offsets")]
-        public float offsetY = 0F;
+        [Header("Look Offsets")] public float offsetY = 0F;
         public float offsetX = 0F;
 
-        [Header("Debug")]
-        public float rotationX = 0F;
+        [Header("Debug")] public float rotationX = 0F;
         public float rotationY = 0F;
 
-        [Header("Options Prefixes")]
-        public string mouseSensitivity = "mouse_sensitivity";
+        [Header("Options Prefixes")] public string mouseSensitivity = "mouse_sensitivity";
         public string verticalSensitivity = "vertical_look";
         public string horizontalSensitivity = "horizontal_look";
         public string invertLook = "invert_look";
@@ -59,11 +61,9 @@ namespace Player
         Vector2 clampRange;
         Quaternion originalRotation;
 
-        [HideInInspector]
-        public bool bodyClamp = false;
+        [HideInInspector] public bool bodyClamp = false;
 
-        [HideInInspector]
-        public Quaternion playerOriginalRotation;
+        [HideInInspector] public Quaternion playerOriginalRotation;
 
         void Awake()
         {
@@ -92,7 +92,7 @@ namespace Player
             originalRotation = transform.localRotation;
             playerOriginalRotation = player.transform.localRotation;
         }
-        
+
 
         void Update()
         {
@@ -138,8 +138,10 @@ namespace Player
 
                 if (smoothLook)
                 {
-                    player.transform.localRotation = Quaternion.Slerp(player.transform.localRotation, playerRotation, smoothTime * Time.deltaTime);
-                    transform.localRotation = Quaternion.Slerp(transform.localRotation, lookRotation, smoothTime * Time.deltaTime);
+                    player.transform.localRotation = Quaternion.Slerp(player.transform.localRotation, playerRotation,
+                        smoothTime * Time.deltaTime);
+                    transform.localRotation =
+                        Quaternion.Slerp(transform.localRotation, lookRotation, smoothTime * Time.deltaTime);
                 }
                 else
                 {
@@ -227,6 +229,7 @@ namespace Player
             rotationX = rotation.x;
             rotationY = rotation.y;
         }
+
         /// <summary>
         /// Correct the Angle
         /// </summary>
@@ -239,6 +242,5 @@ namespace Player
 
             return angle;
         }
-        
     }
 }

@@ -6,7 +6,7 @@ public class CollectTotem : MonoBehaviour
 {
     [SerializeField] private GameObject totemGameObj;
     [SerializeField] private Outline tableOutline;
-    
+
     private ObjectiveData objectiveData;
     private InventoryItemData usbInventoryItemData;
     private bool _triggered = false;
@@ -18,14 +18,12 @@ public class CollectTotem : MonoBehaviour
         {
             usbInventoryItemData = itemObject.item;
         }
-        
+
         ObjectiveObj objectiveObj = gameObject.GetComponent<ObjectiveObj>();
         if (objectiveObj)
         {
             objectiveData = objectiveObj.objectiveData;
         }
-        
-        
     }
 
     // Update is called once per frame
@@ -37,7 +35,7 @@ public class CollectTotem : MonoBehaviour
             {
                 objectiveData.isTriggered = true;
                 tableOutline.enabled = true;
-            }   
+            }
         }
     }
 

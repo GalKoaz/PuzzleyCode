@@ -8,7 +8,7 @@ public class CollectUSB : MonoBehaviour
 {
     [SerializeField] private GameObject usbGameObj;
     [SerializeField] private Outline pcGameObjectOutline;
-    
+
     private ObjectiveData objectiveData;
     private InventoryItemData usbInventoryItemData;
     private bool _triggered = false;
@@ -20,14 +20,12 @@ public class CollectUSB : MonoBehaviour
         {
             usbInventoryItemData = itemObject.item;
         }
-        
+
         ObjectiveObj objectiveObj = gameObject.GetComponent<ObjectiveObj>();
         if (objectiveObj)
         {
             objectiveData = objectiveObj.objectiveData;
         }
-        
-        
     }
 
     // Update is called once per frame

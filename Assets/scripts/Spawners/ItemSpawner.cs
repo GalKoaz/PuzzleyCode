@@ -8,13 +8,13 @@ public class ItemSpawner : MonoBehaviour
 {
     [SerializeField] private Vector3 spawnedPos;
     [SerializeField] private GameObject prefabToSpawn;
-    
+
     // Find the target scene by its name
     public GameObject CurrRespawnedPlayer { get; set; }
-    
+
     // public AnimationClip animationClip;  // Reference to the animation clip
     private bool toSpawn = false;
-    
+
     private void Update()
     {
         if (toSpawn)

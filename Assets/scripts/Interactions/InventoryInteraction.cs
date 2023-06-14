@@ -6,19 +6,19 @@ public class InventoryInteraction : MonoBehaviour
 {
     [Tooltip("Open the inventory button")] [SerializeField]
     private KeyCode interactInputAction;
-    
+
     private GameObject _uiCanvas;
     private CanvasManger canvasManager;
     private GameObject inventoryPanel;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
         _uiCanvas = GameObject.Find("_GAME_UI");
         Debug.Log("DEBUG: " + _uiCanvas);
         canvasManager = _uiCanvas.GetComponent<CanvasManger>();
-        
+
         inventoryPanel = canvasManager.InventoryPanel;
     }
 

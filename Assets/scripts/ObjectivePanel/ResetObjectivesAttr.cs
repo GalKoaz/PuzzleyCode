@@ -8,7 +8,7 @@ using UnityEngine;
 public class ResetObjectivesAttr : MonoBehaviour
 {
     [SerializeField] private ObjectiveData[] ObjectiveDatas;
-    
+
     // Start is called before the first frame update
     void Start()
     {

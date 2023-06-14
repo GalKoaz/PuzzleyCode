@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class ObjectiveManager : MonoBehaviour
 {
-  public static ObjectiveManager Instance;  // Singelton
+    public static ObjectiveManager Instance; // Singelton
 
     // List of all objectives
-    public List<ObjectiveData> allObjectives;  // dynamically list that the room objects are added to
+    public List<ObjectiveData> allObjectives; // dynamically list that the room objects are added to
 
     public List<ObjectiveData> roomObjectives;
 
@@ -16,21 +16,21 @@ public class ObjectiveManager : MonoBehaviour
     public ObjectiveData currentObjective;
 
     public event Action OnObjectiveEndEvent; // event that is invoked whenever we finish current objective
-    
+
     // Event to notify subscribers when the inventory changes
     public event Action OnObjectivesListChangedEvent;
-    
+
     void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
             Destroy(gameObject);
-        
+
         // Keep the inventory system object persistent across scenes
         DontDestroyOnLoad(gameObject);
     }
-    
+
     public void CompleteObjective(int objectiveID)
     {
         ObjectiveData objective = GetObjectiveByID(objectiveID);
@@ -50,7 +50,7 @@ public class ObjectiveManager : MonoBehaviour
 
                 // Perform any necessary actions for the new objective (e.g., UI updates)
                 // OnObjectiveEndEvent?.Invoke();
-                
+
                 // Trigger objective-specific behavior (e.g., opening a door, spawning enemies, etc.)
 
                 // Update UI or perform any other necessary actions
@@ -74,6 +74,7 @@ public class ObjectiveManager : MonoBehaviour
             if (objective.objectiveID == objectiveID)
                 return objective;
         }
+
         return null;
     }
 
@@ -84,7 +85,7 @@ public class ObjectiveManager : MonoBehaviour
         {
             return null;
         }
-        
+
         // Find the next objective in the list
         foreach (ObjectiveData objective in roomObjectives)
         {
@@ -108,7 +109,7 @@ public class ObjectiveManager : MonoBehaviour
         allObjectives.Add(objectiveData);
         OnObjectivesListChangedEvent?.Invoke();
     }
-    
+
     private void Update()
     {
         // Debug.Log("current objective: " + currentObjective.isTriggered);

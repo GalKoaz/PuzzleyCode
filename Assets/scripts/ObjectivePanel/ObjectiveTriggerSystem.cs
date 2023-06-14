@@ -43,4 +43,4 @@ public class ObjectiveTriggerSystem : MonoBehaviour
     //     {
     //         Debug.LogWarning("Objective trigger not found: " + objectiveID);
     //     }
-    }
+}

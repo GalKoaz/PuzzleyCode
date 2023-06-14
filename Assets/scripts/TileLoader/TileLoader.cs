@@ -11,7 +11,7 @@ public class TileLoader : MonoBehaviour
     [SerializeField] private InventoryItemData usbInventoryItem;
     [SerializeField] private GameObject plugUsbObjectiveObj;
     [SerializeField] private Outline pcOutlineScript;
-    
+
     private Collider player;
     private bool canChangeScene = false;
     private bool isSceneLoaded = false;
@@ -21,7 +21,7 @@ public class TileLoader : MonoBehaviour
     private InventoryItem inventoryItem;
     private ObjectiveData plugUsbObjectiveData;
 
-    
+
     private void Start()
     {
         _uiCanvas = GameObject.Find("_GAME_UI");
@@ -31,7 +31,7 @@ public class TileLoader : MonoBehaviour
         ObjectiveObj objectiveObj = plugUsbObjectiveObj.GetComponent<ObjectiveObj>();
         if (objectiveObj)
         {
-            plugUsbObjectiveData = objectiveObj.objectiveData;    
+            plugUsbObjectiveData = objectiveObj.objectiveData;
         }
     }
 
@@ -81,11 +81,11 @@ public class TileLoader : MonoBehaviour
     }
 
     void LoadNextScene()
-    { 
-        SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive); 
+    {
+        SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
         //SceneManager.LoadScene(scene);
     }
-    
+
     void UnloadCurrentScene()
     {
         SceneManager.UnloadSceneAsync(sceneName);

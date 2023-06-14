@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObjectiveEventSystem : MonoBehaviour
 {
-    [Tooltip("Slot prefab to instantiate a new objective")]
-    [SerializeField] private GameObject objectivePrefab;
-    
+    [Tooltip("Slot prefab to instantiate a new objective")] [SerializeField]
+    private GameObject objectivePrefab;
+
     private void Start()
     {
         ObjectiveManager.Instance.OnObjectivesListChangedEvent += OnUpdateObjective;
@@ -18,6 +18,7 @@ public class ObjectiveEventSystem : MonoBehaviour
         {
             Destroy(t.gameObject);
         }
+
         DrawObjectives();
     }
 
@@ -33,7 +34,7 @@ public class ObjectiveEventSystem : MonoBehaviour
     {
         GameObject obj = Instantiate(objectivePrefab);
         obj.transform.SetParent(transform, false);
-        
+
         ObjectiveElementUI objUI = obj.GetComponent<ObjectiveElementUI>();
         if (objUI)
         {

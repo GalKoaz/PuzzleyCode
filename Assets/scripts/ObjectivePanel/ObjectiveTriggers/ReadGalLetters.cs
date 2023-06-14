@@ -30,7 +30,6 @@ public class ReadGalLetters : MonoBehaviour
                 ObjectiveManager.Instance.currentObjective.isTriggered = true;
             }
         }
-
     }
 
 

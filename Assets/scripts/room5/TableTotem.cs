@@ -10,26 +10,23 @@ public class TableTotem : MonoBehaviour
     [SerializeField] private LightsOutPuzzle lightsOutPuzzle;
     [SerializeField] private KeyCode putButton;
 
-    [Header("Totem")]
-    [SerializeField] private Vector3 totemTablePos;
+    [Header("Totem")] [SerializeField] private Vector3 totemTablePos;
     [SerializeField] private Vector3 totemRotation;
-    
-    [Header("Card")]
-    [SerializeField] private Vector3 cardTablePos;
+
+    [Header("Card")] [SerializeField] private Vector3 cardTablePos;
     [SerializeField] private Quaternion cardRotation;
-    
-    [Header("Prefabs")]
-    [SerializeField] private GameObject cardPrefab;
+
+    [Header("Prefabs")] [SerializeField] private GameObject cardPrefab;
     [SerializeField] private GameObject totemPrefab;
-    
+
     private bool _put = false;
     private bool enabledInteract = false;
     private InteractionPanelConfig _interactionPanelConfig;
-    
+
     private GameObject _uiCanvas;
     private CanvasManger canvasManger;
     private InteractManager _interactManager;
-    
+
     private void Start()
     {
         _interactionPanelConfig = gameObject.GetComponent<InteractionPanelConfig>();
@@ -45,10 +42,10 @@ public class TableTotem : MonoBehaviour
         // Check if can put totem and only then enable interacting with the table
         if (!enabledInteract && CanPutTotem())
         {
-            _interactionPanelConfig.Disable = false;  // Enable interaction panel
+            _interactionPanelConfig.Disable = false; // Enable interaction panel
             enabledInteract = true;
         }
-        
+
         // Check if raycast and pressed put button on the desktop
         if (!_put && Input.GetKeyDown(putButton)
                   && canvasManger.CurrRaycastObj == gameObject)
@@ -68,6 +65,7 @@ public class TableTotem : MonoBehaviour
         {
             return true;
         }
+
         return false;
     }
 
@@ -80,15 +78,15 @@ public class TableTotem : MonoBehaviour
 
         InteractionPanelConfig interactionTotemPanelConfig = totemSpawnedGameObj.GetComponent<InteractionPanelConfig>();
         InteractionPanelConfig interactionGameObjectPanelConfig = gameObject.GetComponent<InteractionPanelConfig>();
-        
+
         interactionTotemPanelConfig.Disable = true;
         interactionTotemPanelConfig.Active(false);
         interactionGameObjectPanelConfig.Disable = true;
         interactionGameObjectPanelConfig.Active(false);
-        _interactManager.CrosshairChange(false);  // default crosshair
+        _interactManager.CrosshairChange(false); // default crosshair
 
         gameObject.GetComponent<Outline>().enabled = false;
-        InventorySystem.Instance.Remove(totemInventoryItemData);  // remove from inventory
+        InventorySystem.Instance.Remove(totemInventoryItemData); // remove from inventory
         _put = true;
     }
 }

@@ -30,7 +30,6 @@ public class ReadAmirLetters : MonoBehaviour
                 ObjectiveManager.Instance.currentObjective.isTriggered = true;
             }
         }
-
     }
 
 

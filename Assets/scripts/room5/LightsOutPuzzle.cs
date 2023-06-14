@@ -19,9 +19,9 @@ public class LightsOutPuzzle : MonoBehaviour
     private float openOffset = .5f;
 
     private bool[,] _drawersStatus;
-    
-    public bool Solved { get; set; } = false;  // Indicates if player solved or not.
-    
+
+    public bool Solved { get; set; } = false; // Indicates if player solved or not.
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,15 +55,15 @@ public class LightsOutPuzzle : MonoBehaviour
         // Get current drawer 2d position
         int rowPos = drawerIndex / drawers_rows;
         int colPos = drawerIndex % drawers_cols;
-       
+
         HandleDrawerNeigh(rowPos, colPos);
-        
+
         // Check if player solved the puzzle after current operation
         if (IsSolved())
         {
             Solved = true;
 
-            ObjectiveManager.Instance.currentObjective.isTriggered = true;  // Move to next objectibe
+            ObjectiveManager.Instance.currentObjective.isTriggered = true; // Move to next objectibe
         }
     }
 
@@ -117,24 +117,24 @@ public class LightsOutPuzzle : MonoBehaviour
     {
         return i * drawers_cols + j;
     }
-    
+
     int[] GetDrawer2dPos(int drawerIndex)
     {
         int rowPos = drawerIndex / drawers_rows;
         int colPos = drawerIndex % drawers_cols;
         return new int[] { rowPos, colPos };
     }
-    
-    
+
+
     bool[] RandomizeDrawers()
     {
         int arraySize = drawers_rows * drawers_cols;
         bool[] randomBoolArray = new bool[arraySize];
-        
+
         //  Traverse array with 50% for true and false
         for (int i = 0; i < arraySize; i++)
         {
-            randomBoolArray[i] = Random.Range(0,2) == 0;
+            randomBoolArray[i] = Random.Range(0, 2) == 0;
         }
 
         // Count true cells in array
@@ -151,7 +151,7 @@ public class LightsOutPuzzle : MonoBehaviour
                 falseCellsCnt++;
             }
         }
-        
+
         // Check if the array represent trivial cases
         // Then take a random cell and invert its value.
         if (trueCellsCnt == arraySize || falseCellsCnt == arraySize)
@@ -171,19 +171,19 @@ public class LightsOutPuzzle : MonoBehaviour
         {
             for (int j = 0; j < drawers_cols; j++)
             {
-                _drawersStatus[i,j] = boolArr[i * drawers_cols + j];
+                _drawersStatus[i, j] = boolArr[i * drawers_cols + j];
             }
         }
     }
 
     void OpenDrawer(GameObject drawerGameObject)
     {
-        drawerGameObject.transform.position += new Vector3(openOffset,0, 0);
+        drawerGameObject.transform.position += new Vector3(openOffset, 0, 0);
     }
-    
+
     void CloseDrawer(GameObject drawerGameObject)
     {
-        drawerGameObject.transform.position -= new Vector3(openOffset,0, 0);
+        drawerGameObject.transform.position -= new Vector3(openOffset, 0, 0);
     }
 
     // Function determines which one is opened and which one is close, 
@@ -195,11 +195,10 @@ public class LightsOutPuzzle : MonoBehaviour
             for (int j = 0; j < drawers_cols; j++)
             {
                 GameObject currDrawer = drawers[i * drawers_cols + j];
-                if (_drawersStatus[i,j])
+                if (_drawersStatus[i, j])
                 {
                     OpenDrawer(currDrawer);
                 }
-                
             }
         }
     }
